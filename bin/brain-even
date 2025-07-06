@@ -1,0 +1,33 @@
+﻿#!/usr/bin/env bash
+
+echo "Welcome to the Brain Games!"
+echo "May I have your name?"
+read name
+echo "Hello, $name!"
+echo "Answer 'yes' if the number is even, otherwise answer 'no'."
+
+correct_answers=0
+rounds=3
+
+for ((i=0; i<rounds; i++)); do
+  number=$((RANDOM % 100))
+  echo "Question: $number"
+  read answer
+
+  if [[ $((number % 2)) -eq 0 ]]; then
+    correct="yes"
+  else
+    correct="no"
+  fi
+
+  if [[ "$answer" == "$correct" ]]; then
+    echo "Correct!"
+    ((correct_answers++))
+  else
+    echo "'$answer' is wrong answer ;(. Correct answer was '$correct'."
+    echo "Let's try again, $name!"
+    exit 1
+  fi
+done
+
+echo "Congratulations, $name!"
