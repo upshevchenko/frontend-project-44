@@ -1,11 +1,12 @@
 import readlineSync from 'readline-sync';
+
 const runGame = (description, generateRound) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(description);
 
-  const roundsCount = 3; 
+  const roundsCount = 3;
 
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = generateRound();
@@ -22,6 +23,7 @@ const runGame = (description, generateRound) => {
 
   console.log(`Congratulations, ${name}!`);
 };
+
 const getRandomInt = (min, max) => {
   const minInt = Math.ceil(min);
   const maxInt = Math.floor(max);
