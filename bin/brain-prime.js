@@ -19,3 +19,4 @@ const generateRound = () => {
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 runGame(description, generateRound);
+export default () => runGame(description, generateRound);
