@@ -11,12 +11,10 @@ const isPrime = (num) => {
 };
 
 const generateRound = () => {
-  const question = getRandomInt(1, 100);
+  const question = getRandomInt(2, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  return [question.toString(), correctAnswer];
 };
-
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-runGame(description, generateRound);
 export default () => runGame(description, generateRound);
