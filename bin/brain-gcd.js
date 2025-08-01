@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-
-import { runGame, getRandomInt } from '../src/index.js';
+import { getRandomInt } from '../src/utils.js';
+import { runGame} from '../src/index.js';
 
 const findGCD = (a, b) => (b === 0 ? a : findGCD(b, a % b));
 

@@ -24,16 +24,6 @@ const runGame = (description, generateRound) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-const getRandomInt = (min, max) => {
-  const minInt = Math.ceil(min);
-  const maxInt = Math.floor(max);
-  return Math.floor(Math.random() * (maxInt - minInt + 1)) + minInt;
-};
-
-const isEven = (num) => num % 2 === 0;
-
 export {
-  runGame,
-  getRandomInt,
-  isEven,
+  runGame
 };

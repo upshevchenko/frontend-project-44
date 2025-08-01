@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-
-import { runGame, getRandomInt } from '../src/index.js';
+import { getRandomInt } from '../src/utils.js';
+import { runGame } from '../src/index.js';
 
 const isPrime = (num) => {
   if (num < 2) return false;

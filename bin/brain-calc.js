@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import { runGame, getRandomInt } from '../src/index.js';
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
+import { runGame } from '../src/index.js';
+import { getRandomInt } from '../src/utils.js';
+
 const calculate = (a, b, operator) => {
   switch (operator) {
     case '+': return a + b;
@@ -14,18 +14,13 @@ const calculate = (a, b, operator) => {
 const generateRound = () => {
   const a = getRandomInt(1, 25);
   const b = getRandomInt(1, 25);
-  const operators = ['+', '-', '*'];
-  const operator = operators[getRandomInt(0, operators.length - 1)];
-  
+  const operator = ['+', '-', '*'][getRandomInt(0, 2)]; 
   const question = `${a} ${operator} ${b}`;
   const answer = String(calculate(a, b, operator));
   
   return [question, answer];
 };
 
-const runCalcGame = () => {
-  const rules = 'What is the result of the expression?';
-  runGame(rules, generateRound);
-};
+const description = 'What is the result of the expression?';
 
-runCalcGame();
+export default () => runGame(description, generateRound);
