@@ -8,11 +8,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "prepare": "npm run lint",
     "brain-games": "node bin/brain-games.js",
     "brain-even": "node bin/brain-even.js",
     "brain-gcd": "node bin/brain-gcd.js",
     "brain-progression": "node bin/brain-progression.js",
-    "brain-prime": "node bin/brain-prime.js"
+    "brain-prime": "node bin/brain-prime.js",
+    "check-all": "npm run lint && npm run format:check"
   },
   "repository": {
     "type": "git",
